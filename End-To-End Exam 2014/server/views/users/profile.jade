@@ -1,0 +1,82 @@
+extends ../shared/layout
+block main-content
+    form(method="post")
+        label(for="change-profile-picture") Change Profile Picture
+        input(id="change-profile-picture" class="form-control" type="file" name="changeProfilePicture")
+        br
+        label(for="phone-number") Change Phone Number*
+        input(id="phone-number" class="form-control" type="tel" name="phoneNumber" placeholder="Phone Number")
+        br
+        label(for="facebook-profile") Facebook
+        input(id="facebook-profile" class="form-control" type="url" name="facebook" placeholder="Facebook profile")
+        br
+        label(for="twitter-profile") Twitter
+        input(id="twitter-profile" class="form-control" type="url" name="twitter" placeholder="Twitter profile")
+        br
+        label(for="linkedin-profile") LinkedIn
+        input(id="linkedin-profile" class="form-control" type="url" name="linkedIn" placeholder="LinkedIn profile")
+        br
+        label(for="google-profile") Google+
+        input(id="google-profile" class="form-control" type="url" name="googlePlus" placeholder="Google+ profile")
+        br
+        input(type="submit" class="btn btn-lg" value="Update")
+    if (createdEvents.length != 0)
+        h2 Created events
+        each event in createdEvents
+            div(style="border:1px solid red")
+                h2 Title: #{event.title}
+                h3 Date Created: #{event.dateCreated}
+                h3 Type: #{event.type.initiative} - #{event.type.season}
+                div Category: #{event.category}
+                p Description: #{event.description}
+                div creator: #{event.creatorName} - #{event.creatorPhone}
+                if (event.location != 0)
+                    div location - latitude: #{event.location.latitude} - longitude: #{event.location.longitude}
+                if (event.comments != 0)
+                    h4 comments
+                    each comment in event.comments
+                        div #{comment}
+                else
+                    h3 No comments!
+    else
+        h2 You have not created any events!
+    if (joinedEvents.length != 0)
+        h2 Joint events
+        each event in joinedEvents
+            div(style="border:1px solid red")
+                h2 Title: #{event.title}
+                h3 Date Created: #{event.dateCreated}
+                h3 Type: #{event.type.initiative} - #{event.type.season}
+                div Category: #{event.category}
+                p Description: #{event.description}
+                div creator: #{event.creatorName} - #{event.creatorPhone}
+                if (event.location != 0)
+                    div location - latitude: #{event.location.latitude} - longitude: #{event.location.longitude}
+                if (event.comments != 0)
+                    h4 comments
+                    each comment in event.comments
+                        div #{comment}
+                else
+                    h3 No comments!
+    else
+        h2 You have not joined any events!
+    if (passedEvents.length != 0)
+        h2 Passed events
+        each event in passedEvents
+            div(style="border:1px solid red")
+                h2 Title: #{event.title}
+                h3 Date Created: #{event.dateCreated}
+                h3 Type: #{event.type.initiative} - #{event.type.season}
+                div Category: #{event.category}
+                p Description: #{event.description}
+                div creator: #{event.creatorName} - #{event.creatorPhone}
+                if (event.location != 0)
+                    div location - latitude: #{event.location.latitude} - longitude: #{event.location.longitude}
+                if (event.comments != 0)
+                    h4 comments
+                    each comment in event.comments
+                        div #{comment}
+                else
+                    h3 No comments!
+    else
+        h2 You have not got any passed events!

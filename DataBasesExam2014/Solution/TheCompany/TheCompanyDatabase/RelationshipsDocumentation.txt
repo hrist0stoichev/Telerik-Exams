@@ -1,0 +1,4 @@
+Projects and Employees - many to many relationship - one project has many employees and one employee has many projects
+Employees and Reports - one to many relationship - one employee has many reports
+Departments and Employees - one to many relationship - one department has many employees
+Managers and Employees - one to many relationship - one manager has many employees

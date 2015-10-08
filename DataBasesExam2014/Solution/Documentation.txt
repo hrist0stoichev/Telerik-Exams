@@ -1,0 +1,5 @@
+Connection string for "Company" database: In the app.config file
+Connection string for "Cars" database: In the app.config file
+Relationships for "Company" database: In the folder
+Relationships for "Cars" database: In the folder
+Query files: In the folder

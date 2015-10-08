@@ -1,0 +1,41 @@
+extends ../shared/layout
+
+block main-content
+    form(method="post")
+        label(for="username") Username*
+        input(id="username" class="form-control" type="text" name="username" placeholder="Username")
+        br
+        label(for="password") Password*
+        input(id="password" class="form-control" type="password" name="password" placeholder="Password")
+        br
+        label(for="confirm-password") Confirm Password*
+        input(id="confirm-password" class="form-control" type="password" name="confirmPassword" placeholder="Confirm password")
+        br
+        label(for="first-name") First Name*
+        input(id="first-name" class="form-control" type="text" name="firstName" placeholder="First Name")
+        br
+        label(for="last-name") Last Name*
+        input(id="last-name" class="form-control" type="text" name="lastName" placeholder="Last Name")
+        br
+        label(for="email-adress") Email Adress*
+        input(id="email-adress" class="form-control" type="email" name="email" placeholder="Email Adress")
+        br
+        label(for="phone-number") Phone Number
+        input(id="phone-number" class="form-control" type="tel" name="phoneNumber" placeholder="Phone Number")
+        br
+        label(for="profile-image") Profile Image
+        input(id="profile-image" class="form-control" type="file" name="profileImage")
+        br
+        label(for="facebook-profile") Facebook
+        input(id="facebook-profile" class="form-control" type="url" name="links.facebook" placeholder="Facebook profile")
+        br
+        label(for="twitter-profile") Twitter
+        input(id="twitter-profile" class="form-control" type="url" name="links.twitter" placeholder="Twitter profile")
+        br
+        label(for="linkedin-profile") LinkedIn
+        input(id="linkedin-profile" class="form-control" type="url" name="links.linkedIn" placeholder="LinkedIn profile")
+        br
+        label(for="google-profile") Google+
+        input(id="google-profile" class="form-control" type="url" name="links.googlePlus" placeholder="Google+ profile")
+        br
+        input(type="submit" class="btn btn-lg" value="Register")

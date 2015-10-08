@@ -1,0 +1,24 @@
+<div class="container" ng-controller="TripsCtrl">
+    <div class="row">
+        <div class="col-md-9 text-center">
+            <h1>{{ tripInfo.driverName }}- {{ tripInfo.departureDate }}</h1>
+        </div>
+        <div class="col-md-3">
+            <button ng-click="joinIn(tripInfo.id)">Join Trip</button>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-4">
+            From: <strong>{{ tripInfo.from }}</strong>
+        </div>
+        <div class="col-md-4">
+            To: <strong>{{ tripInfo.to }}</strong>
+        </div>
+        <div class="col-md-4">
+            Number of free reats: <strong>{{ tripInfo.numberOfFreeSeats }}</strong>
+        </div>
+    </div>
+    <div class="row text-center">
+        Passengers: <span ng-repeat="passenger in tripInfo.passengers">{{ passenger }}, </span>
+    </div>
+</div>

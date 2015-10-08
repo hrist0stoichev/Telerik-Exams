@@ -1,0 +1,38 @@
+extends ../shared/layout
+block main-content
+    form(method="post")
+        label(for="title") Title*
+        input(id="title" class="form-control" type="text" name="title" placeholder="Title")
+        br
+        label(for="description") Brief Description*
+        input(id="description" class="form-control" type="text" name="description" placeholder="Brief description")
+        br
+        label(for="latitude") Latitude
+        input(id="latitude" class="form-control" type="text" name="location.latitude" placeholder="Latitude")
+        br
+        label(for="longitude") Longitude
+        input(id="longitude" class="form-control" type="text" name="location.longitude" placeholder="Longitude")
+        br
+        label(for="date") Date of Event*
+        input(id="date" class="form-control" type="datetime-local" name="date")
+        br
+        label Category*
+        select(name="category")
+            option(value="Academy Initiative") Academy Initiative
+            option(value="Free Time") Free Time
+            option(value="Programming") Programming
+            option(value="Software") Software
+        br
+        label Type*
+        select(name="type.initiative")
+            option(value="Software Academy") Software Academy
+            option(value="Algo Academy") Algo Academy
+            option(value="School Academy") School Academy
+            option(value="Kids Academy") Kids Academy
+        select(name="type.season" class="selectpicker")
+            option(value="Started 2010") Started 2010
+            option(value="Started 2010") Started 2011
+            option(value="Started 2010") Started 2012
+            option(value="Started 2010") Started 2013
+        br
+        input(type="submit" class="btn btn-lg" value="Create event")

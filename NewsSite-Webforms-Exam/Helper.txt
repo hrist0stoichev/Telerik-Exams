@@ -1,0 +1,103 @@
+include
+two way binding - binditem
+listview placeholder
+this.Control.FindControl("nameOfControl") as HtmlGenericControl;
+update panel
+potrebitelski kontorli
+error hadling
+
+
+
+1. Enable-Migrations
+2. AutomaticMigrationsEnabled = true;
+   AutomaticMigrationDataLossAllowed = true;
+3. using System.Data.Entity;
+   Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+4. Make models
+5. IDbSet<>
+6. Update-Database
+7. Seed Method
+8. Update-Database
+9. SetDefaultPage 
+	<system.webServer>
+  	    <defaultDocument>
+    		<files>
+      		    <clear />
+      		    <add value="CreateThing.aspx" />
+    		</files>
+  	    </defaultDocument>
+	</system.webServer>
+10. ConnectionString - MultipleActiveResultSets=True
+11. Change Footer
+12. Authorization 
+<location path="Admin">
+    <system.web>
+        <authorization>
+            <deny users="?"/>
+        </authorization>
+    </system.web>
+</location>
+13. <httpRuntime targetFramework="4.5" requestValidationMode="2.0"/>
+    <pages validateRequest="false">
+
+How to get id -----> Request.QueryString["id"];         [QueryString("id")]int? id
+
+SelectMethod,
+ ItemType,
+ DataSource(pri bindvane bez dve to4ki),
+ Text(vnimavai za edini4ni kavichki)
+
+Repeater - ItemTemplate, FooterTemplate, HeaderTemplate
+ListView - ItemTemplate, EditItemTemplate, InsertItemTemplate (InsertItemPosition), EmptyDataTemplate,  GroupTemplate, LayoutTemplate,  /// GroupItemCount       CommandName, CommandArgument   /// DataKeyNames     /// DeleteMethod, UpdateMethod
+HyperLink - NavigateUrl
+LinkButton - PostBackUrl, CommandName
+TextBox - TextMode, placeholder
+Literal - Mode
+LoginView - LoggedInTemplate
+DataPager ---> <Fields> ---> <asp:NumericPagerField />                //      PagedControlID, PageSize
+PlaceHolder - ID="itemPlaceHolder"
+UpdatePanel - Triggers - AsyncPostBackTrigger /// ControlID EventName
+GridView - SelectMethod, UpdateMethod, AllowSorting, AllowPaging, PageSize, AutoGenerateColumns, DataKeyNames      /// Columns
+	<asp:BoundField DataField="" ReadOnly="" HeaderText="" SortExpression="" />
+	<asp:CommandField ShowEditButton="true" ShowDeleteButton="true" />
+	<asp:HyperLinkField DataNavigateUrlFields="" DataTextField="" HeaderText="" SortExpression="" />
+DropDownList - DataTextField, DataValueField, ItemType, SelectMethod, SelectedValue (moje da se binde kym Item.CategoryID naprimer)
+FormView - DefaultMode, ItemType, InsertMethod
+
+------ w Page_PreRender naprimer ------
+this.Kontrola.DataSource = data za bindvane;
+this.Kontrola.DataBind();
+
+
+
+
+------------------- notificator ------------------
+1. Slagame papkata Controls
+2. v Master nai-otgore dobawqme : 
+<%@ Register src="~/Controls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx"
+    tagname="ErrorSuccessNotifier" tagprefix="userControls" %>
+3. nad ContentPlaceHolder v Master dobawqme :
+<userControls:ErrorSuccessNotifier ID="ErrorSuccessNotifier" runat="server" />
+             ---Methods---
+ErrorSuccessNotifier.AddSuccessMessage();
+ErrorSuccessNotifier.ShowAfterRedirect = true;
+ErrorSuccessNotifier.AddWarningMessage();
+ErrorSuccessNotifier.AddErrorMessage();
+ErrorSuccessNotifier.AddInfoMessage();
+
+-------------News------------
+zadyljitelnite poleta v bazata
+validaciq na teksta w News - 300 simvola
+empty item template v News
+LATEST 3 articles
+
+------------Categories----------
+pager
+
+------------Articles-------------
+validaciq na teksta - 300 simvola
+by email or username ?
+slojna validaciq
+-----------Likes-----------
+AJAX
+if not logged

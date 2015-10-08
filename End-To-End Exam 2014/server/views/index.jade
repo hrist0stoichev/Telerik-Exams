@@ -1,0 +1,8 @@
+extends shared/layout
+block main-content
+    h1 Welcome to Telerik Academy Events
+    h2 Passed Events
+    each event in passedEvents
+        div(style="border:1px solid red")
+            h4 Event title: #{event.title}
+            h4 Type: #{event.type.initiative} - #{event.type.season}

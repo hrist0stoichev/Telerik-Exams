@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCompany.Data", "TheCompany.Data\TheCompany.Data.csproj", "{CC1041F8-EE1F-4B46-8E80-DA52A19A87E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheCompany.RandomDataGenerator", "TheCompany.RandomDataGenerator\TheCompany.RandomDataGenerator.csproj", "{74171DD4-DB59-41AB-8E29-814EC48537BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC1041F8-EE1F-4B46-8E80-DA52A19A87E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1041F8-EE1F-4B46-8E80-DA52A19A87E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1041F8-EE1F-4B46-8E80-DA52A19A87E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1041F8-EE1F-4B46-8E80-DA52A19A87E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74171DD4-DB59-41AB-8E29-814EC48537BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74171DD4-DB59-41AB-8E29-814EC48537BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74171DD4-DB59-41AB-8E29-814EC48537BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74171DD4-DB59-41AB-8E29-814EC48537BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

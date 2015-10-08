@@ -1,0 +1,4 @@
+Dealers - Cities - many to many
+Dealers - Cars - one to many
+Transmissions - Cars - one to many
+Manufacturers - Cars - one to many

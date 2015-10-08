@@ -1,0 +1,32 @@
+extends ../shared/layout
+block main-content
+    if (events.length != 0)
+        each event in events
+            div(style="border:1px solid red")
+                h2 Title: #{event.title}
+                h3 Date Created: #{event.dateCreated}
+                h3 Type: #{event.type.initiative} - #{event.type.season}
+                div Category: #{event.category}
+                p Description: #{event.description}
+                div creator: #{event.creatorName} - #{event.creatorPhone}
+                if (event.location != 0)
+                    div location - latitude: #{event.location.latitude} - longitude: #{event.location.longitude}
+                button JoinEvent
+                if (event.comments != 0)
+                    h4 comments
+                    each comment in event.comments
+                        div #{comment}
+                else
+                    h3 No comments!
+                p Write Comment:
+                textarea
+                button Add Comment
+    else
+        h3 No results!
+    if (events.length != 0)
+        h4 Paging:
+        - var i = 1;
+        while i <= pages
+            a(href="/events/#{i}" style="font-size:30px") #{i}
+            span(style="font-size:30px") -
+            - i++;

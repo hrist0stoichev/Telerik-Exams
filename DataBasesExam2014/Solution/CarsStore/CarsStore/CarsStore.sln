@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsStore.Models", "CarsStore.Models\CarsStore.Models.csproj", "{AEBA8711-BABB-45BB-977E-DE4D518560AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsStore.Data", "CarsStore.Data\CarsStore.Data.csproj", "{445FA094-9615-4BA3-BAC9-27B2CCD3DF2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsStore.Importer", "CarsStore.Importer\CarsStore.Importer.csproj", "{0F06FD0B-F8AC-4FE9-BE3F-F20ABBC6FD9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEBA8711-BABB-45BB-977E-DE4D518560AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBA8711-BABB-45BB-977E-DE4D518560AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBA8711-BABB-45BB-977E-DE4D518560AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBA8711-BABB-45BB-977E-DE4D518560AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445FA094-9615-4BA3-BAC9-27B2CCD3DF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445FA094-9615-4BA3-BAC9-27B2CCD3DF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445FA094-9615-4BA3-BAC9-27B2CCD3DF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445FA094-9615-4BA3-BAC9-27B2CCD3DF2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F06FD0B-F8AC-4FE9-BE3F-F20ABBC6FD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F06FD0B-F8AC-4FE9-BE3F-F20ABBC6FD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F06FD0B-F8AC-4FE9-BE3F-F20ABBC6FD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F06FD0B-F8AC-4FE9-BE3F-F20ABBC6FD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

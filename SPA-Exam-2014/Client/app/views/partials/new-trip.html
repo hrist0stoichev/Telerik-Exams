@@ -1,0 +1,43 @@
+<div class="container" ng-controller="TripsCtrl">
+    <div class="well">
+        <form name="newTripForm" class="form-horizontal">
+            <fieldset>
+                <legend>Create New Trip</legend>
+                <div class="form-group">
+                    <label for="fromCity" class="col-md-2 control-label">From</label>
+                    <div class="col-md-10">
+                        <select class="form-control" ng-model="trip.from" required="required">
+                            <option id="fromCity" ng-repeat="city in cities" value="{{city}}">{{ city }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="toCity" class="col-md-2 control-label">To</label>
+                    <div class="col-md-10">
+                        <select class="form-control" ng-model="trip.to" required="required">
+                            <option id="toCity" ng-repeat="city in cities" value="{{city}}">{{ city }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="seats" class="col-md-2 control-label">Available Seats</label>
+                    <div class="col-md-10">
+                        <input id="seats" type="number" required="required" class="form-control" ng-model="trip.availableSeats"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="depTime" class="col-md-2 control-label">Departure Time</label>
+                    <div class="col-md-10">
+                        <input id="depTime" type="text" datepicker required="required" class="form-control" ng-model="trip.departureTime"/>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button ng-click="createTrip(trip)" ng-disabled="newTripForm.$invalid" class="btn btn-primary">
+                        Create
+                    </button>
+                    <a href="#/trips" class="btn btn-primary">Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

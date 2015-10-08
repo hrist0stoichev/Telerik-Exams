@@ -1,0 +1,100 @@
+<div class="container" ng-controller="TripsCtrl">
+    <div class="row">
+        <div class="col-md-10">
+            <h1 class="text-center">Trips</h1>
+        </div>
+        <div class="col-md-2" ng-hide="isAuth">
+            <a href="#/trips/create" class="btn btn-info">Create</a>
+        </div>
+    </div>
+    <div class="row text-center" ng-hide="isAuth">
+        <div class="col-md-3 text-center">
+            <div>Sort</div>
+            <div>
+                <select class="form-control" ng-model="sortBy">
+                    <option value="date">Date</option>
+                    <option value="driver">Driver</option>
+                    <option value="seats">Seats</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div>Order</div>
+            <div>
+                <select class="form-control" ng-model="orderBy">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div>From</div>
+            <div>
+                <select class="form-control" ng-model="from">
+                    <option ng-repeat="city in cities" value="{{ city }}">{{ city }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div>To</div>
+            <div>
+                <select class="form-control" ng-model="to">
+                    <option ng-repeat="city in cities" value="{{city}}">{{ city }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-hide="isAuth">
+        <div class="col-md-2">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="includeFinished"> Include finished
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"  ng-model="onlyMine"> Only mine
+                </label>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-info" ng-click="filterTrips(currentPage, sortBy, orderBy, from, to, includeFinished, onlyMine)">Filter</a>
+        </div>
+        <div class="col-md-3 pull-right">
+            <div class="row">
+                <div class="col-md-3">
+                    <a ng-click="previousPage()" ng-disabled="isDisabled" class="btn btn-info">&lt;&lt;</a>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control" id="paging" type="text" ng-model="currentPage" ng-change="filterTrips(currentPage, sortBy, orderBy, from, to, includeFinished, onlyMine)">
+                </div>
+                <div class="col-md-">
+                    <a ng-click="nextPage()" class="btn btn-info">&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-hover ">
+            <thead>
+            <tr>
+                <th class="text-center">Driver</th>
+                <th class="text-center">From</th>
+                <th class="text-center">To</th>
+                <th class="text-center">Departure Time</th>
+                <th class="text-center" ng-hide="isAuth">Is Mine</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="text-center" ng-repeat="trip in trips">
+                <td><a href="#/drivers/{{trip.driverId}}">{{ trip.driverName }}</a></td>
+                <td>{{ trip.from }}</td>
+                <td>{{ trip.to }}</td>
+                <td><a href="#/trips/{{trip.id}}">{{ trip.departureDate}}</a></td>
+                <td ng-hide="isAuth">{{ trip.isMine }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2 class="text-center" ng-hide="trips.length">No results</h2>
+    </div>
+</div>
