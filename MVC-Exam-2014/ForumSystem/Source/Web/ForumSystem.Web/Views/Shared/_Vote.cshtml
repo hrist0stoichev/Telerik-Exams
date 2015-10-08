@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNet.Identity
+@using ForumSystem.Web.ViewModels.Home
+@model IndexBlogPostViewModel
+<div class="well text-center">
+    @if (this.User.Identity.IsAuthenticated)
+    {
+       bool hasVoted = false;
+       bool currentUserVote = false;
+       foreach(var vote in Model.Votes)
+       {
+           if (vote.Author.Id == this.User.Identity.GetUserId())
+           {
+               hasVoted = true;
+               currentUserVote = vote.IsPositive;
+               break;
+           }
+       }
+        <div class="row">
+            @if (hasVoted)
+            {
+                if (currentUserVote == true)
+                {
+                    <div class="col-md-1">
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#element + @Model.Id.ToString()" href="/Home/UpdateVotesNegative?currentPostId=@Model.Id" class="btn btn-danger btn-sm">Vote Down</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-1">
+                        <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#element + @Model.Id.ToString()" href="/Home/UpdateVotesPositive?currentPostId=@Model.Id" class="btn btn-success btn-sm">Vote Up</a>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-md-1">
+                    <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#element + @Model.Id.ToString()" href="/Home/UpdateVotesPositive?currentPostId=@Model.Id" class="btn btn-success btn-sm">Vote Up</a>
+                </div>
+                <div class="col-md-1">
+                    <a data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#element + @Model.Id.ToString()" href="/Home/UpdateVotesNegative?currentPostId=@Model.Id" class="btn btn-danger btn-sm">Vote Down</a>
+                </div>
+            }
+        </div>
+    }
+    <div class="row">@(Model.Votes.Where(v => v.IsPositive == true).Count() - Model.Votes.Where(v => v.IsPositive == false).Count())</div>
+</div>
